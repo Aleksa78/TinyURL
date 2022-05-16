@@ -8,6 +8,7 @@ db();
 app.use(express.json());
 
 app.use('/api/url', require('./routes/url'));
+app.use('/', require('./routes/redirect'));
 
 require('./config/logging')();
 const  PORT = 3000;
