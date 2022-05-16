@@ -1,0 +1,6 @@
+POST http://localhost:3000/api/url/shortUrl
+Content-Type: application/json
+
+{
+    "longUrl": "https://www.amazon.com/b?node=16225007011&pf_rd_r=GRR39H82SV0KF1G2AQA5&pf_rd_p=e5b0c85f-569c-4c90-a58f-0c0a260e45a0&pd_rd_r=59c76b5c-4ba5-49bf-8e96-6d7d5f43a066&pd_rd_w=UYKcE&pd_rd_wg=tziLQ&ref_=pd_gw_unk"
+}
