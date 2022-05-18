@@ -5,14 +5,25 @@ const validUrl = require('valid-url');
 const shortId = require('short-id');
 const config = require('config');
 
+router.get('/admin', async (req, res) => {
+  
+  const longUrl = await (await Url.find().select('longUrl -_id'));
+  res.send(longUrl);
+
+});
+
 router.post('/shortUrl', async (req, res)=>{
-    const longUrl = req.body.longUrl;
+  console.log(req.body);
+    const longUrl = req.body.post;
+    
+    
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isUri(baseUrl)) return res.status(400).send(" Invalid  base url.");
     const code = shortId.generate();
    
     if (validUrl.isUri(longUrl)) {
+      
         try {
           let url = await Url.findOne({ longUrl });
     

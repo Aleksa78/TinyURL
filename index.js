@@ -2,11 +2,11 @@ const express = require('express');
 const winston = require('winston');
 const db = require('./config/db')
 const app = express();
-
+const cors = require('cors');
 db();
 
 app.use(express.json());
-
+app.use(cors());
 app.use('/api/url', require('./routes/url'));
 app.use('/', require('./routes/redirect'));
 
