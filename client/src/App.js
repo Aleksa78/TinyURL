@@ -11,6 +11,8 @@ class App extends Component {
     responseToPost: '',
   };
  
+ 
+  
   
   handleSubmit = async e => {
     e.preventDefault();
@@ -45,8 +47,9 @@ render() {
         </header>
         <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
+        
           <p>
-            <strong>Post to Server:</strong>
+            <strong>TinyURL</strong>
           </p>
           <input
             type="text"
@@ -54,8 +57,18 @@ render() {
             onChange={e => this.setState({ post: e.target.value })}
           />
           <button type="submit">Submit</button>
+      
         </form>
-        <p>{this.state.responseToPost}</p>
+        
+         
+        
+        
+          
+        
+    
+     
+        
+        
       </div>
     );
   }

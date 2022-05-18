@@ -5,13 +5,18 @@ const validUrl = require('valid-url');
 const shortId = require('short-id');
 const config = require('config');
 
+
+//Admin page for viewing the most popular domains
+domains
 router.get('/admin', async (req, res) => {
   
-  const longUrl = await (await Url.find().select('longUrl -_id'));
+  const longUrl = await  Url.find().select('longUrl -_id');
   res.send(longUrl);
 
 });
 
+
+//Generating code and shortUrl
 router.post('/shortUrl', async (req, res)=>{
   console.log(req.body);
     const longUrl = req.body.post;

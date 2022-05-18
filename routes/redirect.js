@@ -3,6 +3,8 @@ const router = express.Router();
 
 const {Url} = require('../models/url');
 
+
+//redirecting from short url to original url
 router.get('/:url', async (req, res) => {
   
     const url = await Url.findOne({ code: req.params.url });
