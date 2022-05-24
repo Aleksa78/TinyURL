@@ -7,10 +7,11 @@ const config = require('config');
 
 
 //Admin page for viewing the most popular domains
-domains
+
 router.get('/admin', async (req, res) => {
-  
-  const longUrl = await  Url.find().select('longUrl -_id');
+  console.log('done.');
+    const longUrl = await  Url.find().select('longUrl -_id');
+    
   res.send(longUrl);
 
 });
